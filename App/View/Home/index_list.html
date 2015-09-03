@@ -1,0 +1,48 @@
+<% include header.html %>
+
+<div class="ni-main container" ng-controller="ArticleListCtrl">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="ni-article-list-container">
+                        <div class="ni-article-list-header">
+
+                        </div>
+                        <ul class="ni-article-list">
+                        
+                        </ul>
+                        <div class="ni-article-pagination">
+                            <ul id="ni-pagination" class="pagination">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <% include aside.html %>
+                </div>
+            </div>
+        </div>
+<% include footer.html %>
+<script type="text/javascript">
+
+    function buildData(pages){
+         var len = pages.data.length;
+        var htmlArr = [];
+        for(var i=0; i<len; i++){
+            htmlArr.push('<li class="ni-article">');
+            htmlArr.push('<div class="ni-article-container">');
+            htmlArr.push('<span class="ni-article-type">'+pages.data[i].t_id+'</span>');
+            htmlArr.push('<span class="ni-article-title"><a target="_blank" href="article.html#/detail?id='+pages.data[i].t_id+'">'+pages.data[i].t_title+'</a></span>');
+            htmlArr.push('<time class="ni-article-time">'+new Date(pages.data[i].t_time).format("yyyy-MM-dd hh:mm:ss")+'</time>');
+            htmlArr.push('</div>');
+            htmlArr.push('</li>');
+        };
+        $(".ni-article-list").html(htmlArr.join(""));
+    }
+
+
+    $(function(){
+        //document.body.innerHTML = "<h3>前端开发ejs模板测试</h3>";
+        //var date = new Date("2015-04-10T07:18:24.000Z").format("yyyy-MM-dd hh:mm:ss");
+        paging.loadPage(1,"/home/index/articlePage/",buildData);
+    });
+</script>

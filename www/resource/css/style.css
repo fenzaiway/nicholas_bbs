@@ -1,0 +1,234 @@
+body{
+    background-color: #e1e1e1;
+    font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti!important;
+}
+
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+.ni-warp{
+    padding: 40px 0px;
+    text-align: center;
+    background: none repeat scroll 0 0 #F5F5F5;
+}
+
+.ni-site-title{
+    font-size: 45px;
+    color: #333;
+}
+.ni-site-description{
+    font-size: 16px;
+    color: #666;
+}
+
+/**页脚*/
+.ni-footer{
+    background: #fff;
+}
+.ni-footer-warp{
+    padding: 20px 0px;
+}
+.ni-footer-left{
+    float: left;
+}
+.ni-footer-right{
+    float: right;
+}
+
+/*文章列表*/
+.ni-article-list-container{
+    margin: 15px 10px 0;
+    background-color: #fff;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    margin-bottom: 10px;
+}
+.ni-article-list-header{
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 3px 3px 0 0;
+}
+.ni-article-list{
+    list-style: none;
+    padding-left: 0px;
+}
+.ni-article{
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #f0f0f0;
+}
+
+.ni-article-container{
+    line-height: 30px;
+}
+.ni-article-type{
+    background-color: #e5e5e5;
+    color: #999;
+    padding: 2px 4px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    font-size: 12px;
+}
+.ni-article-title{
+    color: #888;
+    max-width: 70%;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 16px;
+    line-height: 30px;
+}
+.ni-article-time{
+    float: right;
+}
+.ni-article-pagination{
+    padding: 10px 10px;
+}
+.ni-article-pagination .pagination{
+    margin: 0;
+}
+
+/**侧边栏*/
+.ni-aside{
+    font-size: 13px;
+    margin: 15px 10px 0;
+}
+.ni-aside-container{
+    margin-bottom: 13px;
+}
+.ni-aside-header{
+    color: #51585c;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    padding: 10px;
+    background-color: #f6f6f6;
+}
+.ni-aside-content{
+    line-height: 2em;
+    padding: 10px;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.ni-aside-content img{
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+/**文章详细*/
+.ni-article-detail-container{
+    margin-bottom: 13px;
+}
+.ni-article-detail-title{
+    background-color: #fff;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 13px 0;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%;
+    line-height: 130%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.ni-article-detail-content{
+    padding: 10px;
+    border-top: 0px solid #e5e5e5;
+    line-height: 2em;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    white-space: normal;
+    word-warp: break-word;
+    word-break: break-all;/*Only work in IE*/
+}
+.ni-article-detail-content img{
+    max-width: 100%;
+}
+.comment{
+    padding: 10px;
+    background-color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    margin: 13px 0;
+}
+
+/*返回到顶部*/
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(232, 98, 86, 0.8) url(../img/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* 如果用户继续向下滚动,这个按钮的透明度会变得更低 */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 60px;
+    width: 60px;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+
+/*demo*/
+.demo-container{
+  height:200px;background:#fff;-webkit-transition:all 0.3s;text-align:center;line-height:200px;
+  margin: 15px 30px 15px 30px;
+}
+.demo-container:hover{
+  border:1px solid #fef;box-shadow:1px 1px 5px rgba(0,0,0,0.8);
+}
+
+/*nav*/
+.ni-front-nav{background-color: #fff;margin: 15px 10px;height: 100px;}
+.ni-front-nav .inner{padding: 15px;}
+.ni-front-nav .inner .title{display: block;color: #337ab7;font-weight: bold;}
+.ni-front-nav .inner .description{display: block;color: #aaa;}

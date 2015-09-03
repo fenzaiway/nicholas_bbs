@@ -1,0 +1,29 @@
+<% include ../Home/header.html %>
+   <div class="container">
+   <% include admin_header.html %>
+		    <div>
+		    	<table class="table table-condensed table-hover">
+		    	   <thead>
+		    	   	 <tr>
+		    	   	 	<th>标题</th>
+		    	   	 	<th>发表时间</th>
+		    	   	 	<th>操作</th>
+		    	   	 </tr>
+		    	   </thead>
+				   <tbody id="articleBody">
+				   	
+				   </tbody>
+				</table>
+				<div class="ni-article-pagination">
+                    <ul id="ni-pagination" class="pagination">
+                    </ul>
+                </div>
+		    </div>
+   	  	</div>
+   	  </div>
+   </div>
+
+<% include ../Home/footer.html %>
+<script type="text/javascript">
+  seajs.use("/resource/app/project/admin-index");
+</script>

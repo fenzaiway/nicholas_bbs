@@ -1,0 +1,38 @@
+<% include header.html %>
+
+<div class="ni-main container" ng-controller="ArticleListCtrl">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="ni-article-list-container">
+                        <div class="ni-article-list-header">
+
+                        </div>
+                        <ul class="ni-article-list">
+                            <% IndexData.data.forEach(function(item){%>
+                                <li class="ni-article">
+                                    <div class="ni-article-container">
+                                        <span class="ni-article-type"><%=item.type%></span>
+                                        <span class="ni-article-title">
+                                            <a target="_blank" href="/detail/<%=item.t_id%>"><%=item.t_title%></a>
+                                        </span>
+                                        <time class="ni-article-time"><%= moment(item.t_time).format('YYYY-MM-DD HH:mm:ss')%></time>
+                                    </div>
+                                </li>
+                            <% })%>
+                        </ul>
+                        <div class="ni-article-pagination">
+                            <a style="display: none;" id="hidePageLink" href="/page/<%=IndexData.pageNow%>"><%=IndexData.pageNow%></a>
+                            <ul id="ni-pagination" pageNow="<%=IndexData.pageNow%>" count="<%=IndexData.count%>" class="pagination">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <% include aside.html %>
+                </div>
+            </div>
+        </div>
+<% include footer.html %>
+<script type="text/javascript">
+    seajs.use("/resource/app/project/index-index.js");
+</script>
