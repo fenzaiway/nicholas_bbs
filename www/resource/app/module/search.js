@@ -1,10 +1,11 @@
 /**
- * 首页
+ * 搜索模块
  */
 define(function(require, exports, module){
     require('jquery');
     require('page');
     require('common');
+    require('aside');
 
     function buildData(pages){
          var len = pages.data.length;
@@ -12,21 +13,17 @@ define(function(require, exports, module){
         for(var i=0; i<len; i++){
             htmlArr.push('<li class="ni-article">');
             htmlArr.push('<div class="ni-article-container">');
-            htmlArr.push('<span class="ni-article-type">'+pages.data[i].type+'</span>');
             htmlArr.push('<span class="ni-article-title"><a target="_blank" href="/detail/'+pages.data[i].t_id+'">'+pages.data[i].t_title+'</a></span>');
             htmlArr.push('<time class="ni-article-time">'+new Date(pages.data[i].t_time).format("yyyy-MM-dd hh:mm:ss")+'</time>');
             htmlArr.push('</div>');
             htmlArr.push('</li>');
         };
         $(".ni-article-list").html(htmlArr.join(""));
-        console.info($("#hidePageLink"));
-        $("#hidePageLink").attr("href","/page/"+pages.pageNow).html(pages.pageNow);
     }
 
-    var index = function(){
-        //paging.loadPage(1,"/home/index/articlePage/",buildData);
-        paging.setPageLink("/home/index/articlePage/",$("#ni-pagination").attr("pageNow"),$("#ni-pagination").attr("count"),buildData);
-    }
-
-    index();
+    (function(){
+        var kw = $("#kw-highline").text();
+        $("#kw").val(kw)
+        paging.setPageLink("/Home/Search/page",1,$("#ni-pagination").attr("count"),buildData,{kw:kw});
+    })();
 });

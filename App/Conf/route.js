@@ -6,4 +6,5 @@ module.exports = [
     ["d/:src","demo/index/demoRoute"],
     ["search/:kw","Home/Search/index"],
     ["page/:pageNow","Home/index/index"],
+    ["type/:typeId","Home/Search/searchByType"]
 ]

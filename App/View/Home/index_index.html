@@ -11,7 +11,7 @@
                             <% IndexData.data.forEach(function(item){%>
                                 <li class="ni-article">
                                     <div class="ni-article-container">
-                                        <span class="ni-article-type"><%=item.type%></span>
+                                        <span class="ni-article-type"><a href="/type/<%=item.t_type_id%>"><%=item.type%></a></span>
                                         <span class="ni-article-title">
                                             <a target="_blank" href="/detail/<%=item.t_id%>"><%=item.t_title%></a>
                                         </span>
@@ -34,5 +34,5 @@
         </div>
 <% include footer.html %>
 <script type="text/javascript">
-    seajs.use("/resource/app/project/index-index.js");
+    var init = seajs.use("/resource/app/init/index-index");
 </script>

@@ -6,5 +6,8 @@ define(function(require, exports, module){
     require("bootstrap");
     require("backToTop");
     require("imgZoom");
-    $('img').imgZoom();
+    var footer = function(){
+        $('img').imgZoom();
+    }
+    module.exports = {footer:footer};
 });

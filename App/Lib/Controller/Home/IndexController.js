@@ -16,7 +16,7 @@ ejs.filters.dateformat = function(obj, format) {
 module.exports = Controller("Home/BaseController", function(){
   "use strict";
 
-  function indexQuery(self,callback){
+  function __indexQuery(self,callback){
     var pageResult = {};
       var pageNow = self.get("pageNow") || 1;
       var pageSize = self.get("pageSize") || 10;
@@ -25,7 +25,7 @@ module.exports = Controller("Home/BaseController", function(){
         pageResult.count = count;
       }).then(function(){
           console.info('pageNow=' + pageNow);
-          D("BlogArticle").query('select a.t_id,a.t_title,a.t_time,b.type from __TABLE__ as a, t_blog_type as b where  a.t_type_id=b.id  order by a.t_id desc limit '+from+','+pageSize,[])
+          D("BlogArticle").query('select a.t_id,a.t_type_id,a.t_title,a.t_time,b.type from __TABLE__ as a, t_blog_type as b where  a.t_type_id=b.id  order by a.t_id desc limit '+from+','+pageSize,[])
             .then(function(data){
               pageResult.data = data;
               pageResult.pageNow = pageNow;
@@ -37,7 +37,7 @@ module.exports = Controller("Home/BaseController", function(){
   return {
     indexAction: function(){
       var self = this;
-      indexQuery(self,function(data){
+      __indexQuery(self,function(data){
         //self.json(data);
         self.assign({
           "title":"Nicholas学习笔记",
@@ -48,7 +48,7 @@ module.exports = Controller("Home/BaseController", function(){
     },
     articlePageAction:function(){
       var self = this;
-      indexQuery(self,function(data){
+      __indexQuery(self,function(data){
           self.json(data);
       });
     },
@@ -61,17 +61,17 @@ module.exports = Controller("Home/BaseController", function(){
          article.title = data[0].t_title;
          article.content = data[0].t_content;
          self.assign(article);
-         self.display();
+         self.display("Home/index_articleDetail.html");
       });
     },
     headerAction:function(){
       var self = this;
       self.assign("title","Nicholas学习笔记");
-      self.display("home/header.html");
+      self.display("Home/header.html");
     },
     footerAction:function(){
       var self = this;
-      self.display("home/footer.html");
+      self.display("Home/footer.html");
     },
     navAction:function(){
       var self = this;

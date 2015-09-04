@@ -15,6 +15,16 @@
     </div>
     <div class="ni-aside-container">
         <div class="ni-aside-header">
+            分类
+        </div>
+        <div class="ni-aside-content" ms-controller="type-aside">
+             <ul style="list-style: none;padding: 5px;">
+                 <li ms-repeat="datas"><a target="_blank" ms-attr-href="/type/{{el.id}}" ms-attr-title="{{el.type}}">{{el.type}}（{{el.count}}）</a></li>
+             </ul>
+        </div>
+    </div>
+    <div class="ni-aside-container">
+        <div class="ni-aside-header">
             Nicholas学习笔记
         </div>
         <div class="ni-aside-content">
@@ -39,16 +49,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-  document.onkeydown = function(event){
-   var keyCode = event.keyCode ? event.keyCode : event.which ? event.which : event.charCode;
-   if (keyCode == 13) {
-      searchGo();
-   }
- }
-
- function searchGo(){
-    location.href='/search/'+document.getElementById('kw').value;
- }
-
-</script>

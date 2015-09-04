@@ -33,9 +33,10 @@ define(function(require, exports, module){
     }
    }
 
-    function articleLoad(){
+    var articleLoad =function(){
         paging.loadPage(1,"/admin/article/articleList.html",createArticleList);
     }
 
     articleLoad();
+    module.exports = {admin:articleLoad};
 });
