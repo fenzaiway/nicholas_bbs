@@ -1,0 +1,42 @@
+<% include ../Home/header.html%>
+ <link id="prettify-style" href="/resource/css/prettify-cmd.css" type="text/css" rel="stylesheet">
+    <div class="container" style="margin-top: 10px;">
+        <div class="row">
+            <div class="col-md-4">
+                <form class="form-horizontal" action="/Demo/index/upload" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="html" class="col-sm-4 control-label">demo页面</label>
+                        <div class="col-sm-8">
+                            <input type="file" required class="form-control" id="html" name="html">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4 control-label">文件名</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="name" required name="name" maxlength="50">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">上传</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8">
+                <div id="wmd-preview" class="wmd-preview">
+                    <h2 data-anchor-id="mnne" id="建议"><strong>建议</strong></h2>
+                    <p data-anchor-id="kn6q">在您的demo页面中通过ejs include 网站的header</p>
+                    <div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="m0zt"><ol class="linenums"><li class="L0"><code><span class="pun">&lt;%</span><span class="pln"> include html</span><span class="pun">-</span><span class="pln">header</span><span class="pun">.</span><span class="pln">html %&gt;</span></code></li></ol></pre>
+                    <p data-anchor-id="z2nk">以及尾部</p>
+                    <div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="zrxq"><ol class="linenums"><li class="L0"><code><span class="pun">&lt;%</span><span class="pln"> include </span><span class="pun">../../</span><span class="typ">Home</span><span class="pun">/</span><span class="pln">footer</span><span class="pun">.</span><span class="pln">html %&gt;</span></code></li></ol></pre>
+                    <blockquote data-anchor-id="cgmp" class="white-blockquote">
+                        <p>参考例子源码</p>
+                    </blockquote>
+                    <div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="tsqp"><ol class="linenums"><li class="L0"><code><span class="pun">&lt;%</span><span class="pln"> include html</span><span class="pun">-</span><span class="pln">header</span><span class="pun">.</span><span class="pln">html %&gt;</span></code></li><li class="L1"><code><span class="tag">&lt;link</span><span class="pln"> </span><span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/css"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"/resource/css/bootstrap.css"</span><span class="tag">&gt;</span></code></li><li class="L2"><code><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"container"</span><span class="tag">&gt;</span></code></li><li class="L3"><code><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span></code></li><li class="L4"><code><span class="pln">        </span><span class="tag">&lt;h4&gt;</span><span class="pln">avalon双向绑定helloworld</span><span class="tag">&lt;/h4&gt;</span></code></li><li class="L5"><code><span class="pln">        </span><span class="tag">&lt;div&gt;</span><span class="pln">及时显示输入的数据</span><span class="tag">&lt;/div&gt;</span></code></li><li class="L6"><code><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></code></li><li class="L7"><code><span class="pln">    </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"row"</span><span class="tag">&gt;</span></code></li><li class="L8"><code><span class="pln">        </span><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">ms-important</span><span class="pun">=</span><span class="atv">'test'</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"col-sm-4"</span><span class="tag">&gt;</span></code></li><li class="L9"><code><span class="pln">        </span><span class="tag">&lt;form&gt;</span></code></li><li class="L0"><code><span class="pln">            </span><span class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"form-control"</span><span class="pln"> </span><span class="atn">ms-duplex</span><span class="pun">=</span><span class="atv">'name'</span><span class="pln"> </span><span class="atn">maxlength</span><span class="pun">=</span><span class="atv">"20"</span><span class="pln"> </span><span class="atn">placeholder</span><span class="pun">=</span><span class="atv">'输入内容...'</span><span class="tag">/&gt;</span></code></li><li class="L1"><code><span class="pln">            </span><span class="tag">&lt;br/&gt;</span></code></li><li class="L2"><code><span class="pln">            </span><span class="tag">&lt;span&gt;</span><span class="pln">您输入的数据为:</span><span class="tag">&lt;h4&gt;</span><span class="pln">{{name}}</span><span class="tag">&lt;/h4&gt;&lt;/span&gt;</span></code></li><li class="L3"><code><span class="pln">        </span><span class="tag">&lt;/form&gt;</span></code></li><li class="L4"><code><span class="pln">        </span><span class="tag">&lt;/div&gt;</span></code></li><li class="L5"><code><span class="pln">    </span><span class="tag">&lt;/div&gt;</span></code></li><li class="L6"><code><span class="tag">&lt;/div&gt;</span></code></li><li class="L7"><code><span class="pun">&lt;%</span><span class="pln"> include </span><span class="pun">../../</span><span class="typ">Home</span><span class="pun">/</span><span class="pln">footer</span><span class="pun">.</span><span class="pln">html %&gt;</span></code></li><li class="L8"><code><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"/resource/js/avalon.min.js"</span><span class="tag">&gt;&lt;/script&gt;</span></code></li><li class="L9"><code><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="tag">&gt;</span></code></li><li class="L0"><code><span class="pln">    avalon</span><span class="pun">.</span><span class="pln">define</span><span class="pun">({</span></code></li><li class="L1"><code><span class="pln">        $id</span><span class="pun">:</span><span class="str">'test'</span><span class="pun">,</span></code></li><li class="L2"><code><span class="pln">        name</span><span class="pun">:</span><span class="str">''</span></code></li><li class="L3"><code><span class="pln">    </span><span class="pun">});</span></code></li><li class="L4"><code><span class="tag">&lt;/script&gt;</span></code></li></ol></pre></div>
+            </div>
+        </div>
+    </div>
+    <% include ../Home/footer.html%>
+<script type="text/javascript" src="/resource/js/jquery.min.js"></script>
+<script type="text/javascript" src="/resource/js/bootstrap.min.js"></script>

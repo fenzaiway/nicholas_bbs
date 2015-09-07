@@ -1,0 +1,25 @@
+<% include html-header.html %>
+<link rel="stylesheet" type="text/css" href="/resource/css/bootstrap.css">
+<div class="container">
+	<div class="row">
+		<h4>avalon双向绑定helloworld</h4>
+		<div>及时显示输入的数据</div>
+	</div>
+	<div class="row">
+		<div ms-important='test' class="col-sm-4">
+		<form>
+			<input type="text" class="form-control" ms-duplex='name' maxlength="20" placeholder='输入内容...'/>
+			<br/>
+			<span>您输入的数据为:<h4>{{name}}</h4></span>
+		</form>
+		</div>
+	</div>
+</div>
+<% include ../../Home/footer.html %>
+<script type="text/javascript" src="/resource/js/avalon.min.js"></script>
+<script type="text/javascript">
+	avalon.define({
+		$id:'test',
+		name:''
+	});
+</script>

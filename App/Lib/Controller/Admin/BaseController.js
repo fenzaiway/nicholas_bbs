@@ -9,7 +9,6 @@ module.exports = Controller(function(){
 		      if(http.action === "login"){
 		      	return;
 		      }
-		      console.info('------aaaa--------');
 		      if(http.action !== "toLogin"){
 		      	 return self.session("userinfo").then(function(data){
 			      	if(isEmpty(data)){

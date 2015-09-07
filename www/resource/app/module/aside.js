@@ -12,8 +12,10 @@ define(function(require, exports, module) {
     function searchGo() {
         location.href = '/search/' + document.getElementById('kw').value;
     }
-    
-    
+
+    //bind go search btn click
+    $("#searchGo").on('click',searchGo);
+
 
     var v = avalon.define({
         $id:'type-aside',

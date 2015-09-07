@@ -8,7 +8,7 @@ var paging = function() {
     /**创建页面导航*/
     function pageLink(count, pageNow) {
         var pageCount = __pageCount = Math.ceil(count / pageSize);
-        if(pageCount === 1){
+        if(pageCount === 1 || count === 0){
             return;
         }
         var pages = [];
